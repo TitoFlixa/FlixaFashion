@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+
+      <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="flixa_fashion.list">
+      <field name="name">Division Codes list</field>
+      <field name="model">ff_Division_Code</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="flixa_fashion.action_window">
+      <field name="name">FlixaFashion window</field>
+      <field name="res_model">ff_Division_Code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="flixa_fashion.action_server">
+      <field name="name">FlixaFashion server</field>
+      <field name="model_id" ref="model_ff_Division_Code"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    
+    <!-- Top menu item -->
+    
+    <menuitem name="FlixaFashion" id="flixa_fashion.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Menu 1" id="flixa_fashion.menu_1" parent="flixa_fashion.menu_root"/>
+    <menuitem name="Menu 2" id="flixa_fashion.menu_2" parent="flixa_fashion.menu_root"/>
+    
+    <!-- actions -->
+   
+    <menuitem name="List" id="flixa_fashion.menu_1_list" parent="flixa_fashion.menu_1"
+              action="flixa_fashion.action_window"/>
+    <menuitem name="Server to list" id="flixa_fashion" parent="flixa_fashion.menu_2"
+              action="flixa_fashion.action_server"/>
+  </data>
+</odoo>
