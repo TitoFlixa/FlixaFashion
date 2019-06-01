@@ -22,17 +22,40 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+      
+          <!-- actions opening collection_code views on models -->
 
+    <record id="ff_collection_code_action_window" model="ir.actions.act_window">
+      <field name="name">Collection Codes</field>
+      <field name="res_model">ff.collection.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+      
+
+          <!-- actions opening classification_code views on models -->
+
+    <record id="ff_classification_code_action_window" model="ir.actions.act_window">
+      <field name="name">Product Classification Codes</field>
+      <field name="res_model">ff.classification.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+      
+      
 
     <!-- Top menu items TEMPORARY -->      
       
-    <menuitem name="Flixa Fashion" id="flixa_base_menu" />
+    <menuitem name="FlixaFashion" id="flixa_base_menu" />
     <menuitem name="Settings Menu" id="flixa_setting_menu" parent="flixa_base_menu"/>
       
     <menuitem name="Division Codes" id="ff_division_code_menu" parent="flixa_setting_menu" action="ff_division_code_action_window"/>
 
          <menuitem name="Designer Codes" id="ff_designer_code_menu" parent="flixa_setting_menu" action="ff_designer_code_action_window"/>
 
+         <menuitem name="Collection Codes" id="ff_collection_code_menu" parent="flixa_setting_menu" action="ff_collection_code_action_window"/>
+
+         <menuitem name="Product Classification Codes" id="ff_classification_code_menu" parent="flixa_setting_menu" action="ff_classification_code_action_window"/>
+      
+      
       
     </data>
 </odoo>

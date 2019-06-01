@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<odoo>
+  <data>
+
+
+
+      
+    <!-- explicit list view definition -->
+
+    <record id="ff_collection_code_view_list" model="ir.ui.view">
+      <field name="name">Collection Codes</field>
+      <field name="model">ff.collection.code</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+
+    <record id="ff_collection_code_view_form" model="ir.ui.view">
+      <field name="name">Collection Code</field>
+      <field name="model">ff.collection.code</field>
+      <field name="arch" type="xml">
+        <form string="Collection Code">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    
+    
+    </data>
+</odoo>
