@@ -33,6 +33,7 @@
         'views/ff_designer_code_views.xml',
         'views/ff_collection_code_views.xml',
         'views/ff_classification_code_views.xml',
+        'views/ff_season_code_views.xml',
         
         # 'views/templates.xml',
     ],

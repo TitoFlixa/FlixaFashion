@@ -40,7 +40,15 @@
       <field name="view_mode">tree,form</field>
     </record>
       
-      
+
+          <!-- actions opening season_code views on models -->
+
+    <record id="ff_season_code_action_window" model="ir.actions.act_window">
+      <field name="name">Season Codes</field>
+      <field name="res_model">ff.season.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+            
 
     <!-- Top menu items TEMPORARY -->      
       
@@ -54,6 +62,8 @@
          <menuitem name="Collection Codes" id="ff_collection_code_menu" parent="flixa_setting_menu" action="ff_collection_code_action_window"/>
 
          <menuitem name="Product Classification Codes" id="ff_classification_code_menu" parent="flixa_setting_menu" action="ff_classification_code_action_window"/>
+
+         <menuitem name="Season Codes" id="ff_season_code_menu" parent="flixa_setting_menu" action="ff_season_code_action_window"/>
       
       
       

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<odoo>
+  <data>
+
+
+
+      
+    <!-- explicit list view definition -->
+
+    <record id="ff_season_code_view_list" model="ir.ui.view">
+      <field name="name">Season Codes</field>
+      <field name="model">ff.season.code</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_production_date"/>
+          <field name="end_production_date"/>
+          <field name="start_sales_date"/>
+          <field name="end_sales_date"/>
+            
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+
+    <record id="ff_season_code_view_form" model="ir.ui.view">
+      <field name="name">Season Code</field>
+      <field name="model">ff.season.code</field>
+      <field name="arch" type="xml">
+        <form string="Season Code">
+            
+            <sheet>
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" placeholder="Season's Name" required="True"/>
+                    </h1>
+                 </div>
+                <group>
+                    <group>
+                        <field name="start_production_date"/>
+                        <field name="start_sales_date"/>
+                    </group>
+                    <group>
+                        <field name="end_production_date"/>
+                        <field name="end_sales_date"/>
+                    </group>
+                </group>
+             </sheet>            
+
+        </form>
+      </field>
+    </record>
+    
+    
+    </data>
+</odoo>
