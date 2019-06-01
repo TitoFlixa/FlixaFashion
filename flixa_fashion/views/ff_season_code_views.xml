@@ -25,7 +25,7 @@
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" />
                             <h1>
-                                <field name="name" placeholder="Season's Name" required="True" />
+                                <field name="name" placeholder="Season Code" required="True" />
                             </h1>
                         </div>
                         <group>

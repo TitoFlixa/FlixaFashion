@@ -34,6 +34,7 @@
         'views/ff_collection_code_views.xml',
         'views/ff_classification_code_views.xml',
         'views/ff_season_code_views.xml',
+        'views/res_config_settings.xml',
         
         # 'views/templates.xml',
     ],
