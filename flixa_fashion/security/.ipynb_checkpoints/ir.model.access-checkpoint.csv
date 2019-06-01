@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ff_Division_Code,ff_division_code,model_ff.division.code,,1,0,0,0
+access_ff_Division_Code,ff_division_code,model_ff_division_code,,1,1,1,1
