@@ -14,6 +14,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+
+    <!-- Top menu items TEMPORARY -->      
+      
+    <menuitem name="Flixa Fashion" id="flixa_base_menu" />
+    <menuitem name="Division Codes" id="ff_division_code_menu" parent="flixa_base_menu" action="ff_division_code_action_window"/>
+      
       
     <!-- explicit list view definition -->
 

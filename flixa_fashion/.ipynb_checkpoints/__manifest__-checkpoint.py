@@ -28,6 +28,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/ff_menu.xml',
         'views/ff_division_code_views.xml',
         # 'views/templates.xml',
     ],
