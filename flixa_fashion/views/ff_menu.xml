@@ -5,6 +5,14 @@
 <odoo>
   <data>
 
+          <!-- actions opening views on models -->
+
+    <record id="ff_division_code_action_window" model="ir.actions.act_window">
+      <field name="name">Division Codes</field>
+      <field name="res_model">ff.division.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
 
     <!-- Top menu items TEMPORARY -->      
