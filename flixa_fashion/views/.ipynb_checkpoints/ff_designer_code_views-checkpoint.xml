@@ -5,27 +5,13 @@
 <odoo>
   <data>
 
-
-    <!-- actions opening views on models -->
-
-    <record id="ff_division_code_action_window" model="ir.actions.act_window">
-      <field name="name">Division Codes</field>
-      <field name="res_model">ff.division.code</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-
-    <!-- Top menu items TEMPORARY -->      
-      
-    <menuitem name="Flixa Fashion" id="flixa_base_menu" />
-    <menuitem name="Division Codes" id="ff_division_code_menu" parent="flixa_base_menu" action="ff_division_code_action_window"/>
       
       
     <!-- explicit list view definition -->
 
-    <record id="ff_division_code_view_list" model="ir.ui.view">
-      <field name="name">Division Codes</field>
-      <field name="model">ff.division.code</field>
+    <record id="ff_designer_code_view_list" model="ir.ui.view">
+      <field name="name">Designer Codes</field>
+      <field name="model">ff.designer.code</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -35,11 +21,11 @@
 
     <!-- explicit form view definition -->
 
-    <record id="ff_division_code_view_form" model="ir.ui.view">
+    <record id="ff_designer_code_view_form" model="ir.ui.view">
       <field name="name">Division Code</field>
       <field name="model">ff.division.code</field>
       <field name="arch" type="xml">
-        <form string="Division Code">
+        <form string="Designer Code">
             <sheet>
                 <group>
                     <field name="name"/>

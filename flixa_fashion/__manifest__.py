@@ -30,6 +30,7 @@
         'security/ir.model.access.csv',
         'views/ff_menu.xml',
         'views/ff_division_code_views.xml',
+        'views/ff_designer_code_views.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

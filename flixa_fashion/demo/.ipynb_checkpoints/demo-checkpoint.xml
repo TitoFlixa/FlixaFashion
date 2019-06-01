@@ -20,5 +20,31 @@
         <record id="object4" model="ff.division.code"> 
             <field name="name">Div 4</field>
         </record>
+        
+        
+        
+        <record id="object0" model="ff.designer.code"> 
+            <field name="name">DES 0</field>
+        </record>
+
+        <record id="object1" model="ff.designer.code"> 
+            <field name="name">DES 1</field>
+        </record>
+
+        <record id="object2" model="ff.designer.code"> 
+            <field name="name">DES 2</field>
+        </record>
+
+        <record id="object3" model="ff.designer.code"> 
+            <field name="name">DES 3</field>
+        </record>
+
+        <record id="object4" model="ff.designer.code"> 
+            <field name="name">DES 4</field>
+        </record>
+
+                
+        
+        
     </data>
 </odoo>

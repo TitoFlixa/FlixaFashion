@@ -5,11 +5,20 @@
 <odoo>
   <data>
 
-          <!-- actions opening views on models -->
+          <!-- actions opening division_code views on models -->
 
     <record id="ff_division_code_action_window" model="ir.actions.act_window">
       <field name="name">Division Codes</field>
       <field name="res_model">ff.division.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      
+          <!-- actions opening designer_code views on models -->
+
+    <record id="ff_designer_code_action_window" model="ir.actions.act_window">
+      <field name="name">Designer Codes</field>
+      <field name="res_model">ff.designer.code</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -21,6 +30,8 @@
     <menuitem name="Settings Menu" id="flixa_setting_menu" parent="flixa_base_menu"/>
       
     <menuitem name="Division Codes" id="ff_division_code_menu" parent="flixa_setting_menu" action="ff_division_code_action_window"/>
+
+         <menuitem name="Designer Codes" id="ff_designer_code_menu" parent="flixa_setting_menu" action="ff_designer_code_action_window"/>
 
       
     </data>
