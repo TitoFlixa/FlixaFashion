@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
 <odoo>
-  <data>
-
-
-
-      
-    <!-- explicit list view definition -->
-
-    <record id="ff_division_code_view_list" model="ir.ui.view">
-      <field name="name">Division Codes</field>
-      <field name="model">ff.division.code</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-        </tree>
-      </field>
-    </record>
-
-    <!-- explicit form view definition -->
-
-    <record id="ff_division_code_view_form" model="ir.ui.view">
-      <field name="name">Division Code</field>
-      <field name="model">ff.division.code</field>
-      <field name="arch" type="xml">
-        <form string="Division Code">
-            <sheet>
-                <group>
-                    <field name="name"/>
-                </group>
-            </sheet>
-        </form>
-      </field>
-    </record>
-    
-    
+    <data>
+        <!-- explicit list view definition -->
+        <record id="ff_division_code_view_list" model="ir.ui.view">
+            <field name="name">Division Codes</field>
+            <field name="model">ff.division.code</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record id="ff_division_code_view_form" model="ir.ui.view">
+            <field name="name">Division Code</field>
+            <field name="model">ff.division.code</field>
+            <field name="arch" type="xml">
+                <form string="Division Code">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" placeholder="Division Code" required="True" />
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
     </data>
 </odoo>
