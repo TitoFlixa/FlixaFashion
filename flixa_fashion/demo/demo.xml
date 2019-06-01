@@ -1,23 +1,23 @@
 <odoo>
     <data>
 
-        <record id="object0" model="ff_Division_Code"> 
+        <record id="object0" model="ff.Division.Code"> 
             <field name="name">Div 0</field>
         </record>
         
-        <record id="object1" model="ff_Division_Code"> 
+        <record id="object1" model="ff.Division.Code"> 
             <field name="name">Div 1</field>
         </record>
         
-        <record id="object2" model="ff_Division_Code"> 
+        <record id="object2" model="ff.Division.Code"> 
             <field name="name">Div 2</field>
         </record>
         
-        <record id="object3" model="ff_Division_Code"> 
+        <record id="object3" model="ff.Division.Code"> 
             <field name="name">Div 3</field>
         </record>
         
-        <record id="object4" model="ff_Division_Code"> 
+        <record id="object4" model="ff.Division.Code"> 
             <field name="name">Div 4</field>
         </record>
     </data>
