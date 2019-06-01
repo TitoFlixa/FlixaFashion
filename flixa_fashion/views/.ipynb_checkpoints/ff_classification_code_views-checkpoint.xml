@@ -16,7 +16,7 @@
             <field name="name">Classification Code</field>
             <field name="model">ff.classification.code</field>
             <field name="arch" type="xml">
-                <form string="Classification Code">
+                <form>
                     <sheet>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" />

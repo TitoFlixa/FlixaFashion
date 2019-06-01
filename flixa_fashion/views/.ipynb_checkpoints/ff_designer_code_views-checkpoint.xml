@@ -14,7 +14,7 @@
         <!-- explicit form view definition -->
         <record id="ff_designer_code_view_form" model="ir.ui.view">
             <field name="name">Division Code</field>
-            <field name="model">ff.division.code</field>
+            <field name="model">ff.designer.code</field>
             <field name="arch" type="xml">
                 <form string="Designer Code">
                     <sheet>
