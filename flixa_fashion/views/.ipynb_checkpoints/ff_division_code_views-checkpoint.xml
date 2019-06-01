@@ -40,7 +40,9 @@
       <field name="model">ff.division.code</field>
       <field name="arch" type="xml">
         <form>
-          <field name="name"/>
+            <group>
+                <field name="name"/>
+            </group>    
         </form>
       </field>
     </record>
