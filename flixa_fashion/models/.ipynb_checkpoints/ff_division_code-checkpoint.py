@@ -8,8 +8,8 @@ from odoo import models, fields, api
 # 3 :  imports from odoo addons
 
 
-class ffDivisionCode(models.Model):
-    _name = 'ff.Division.Code'
+class DivisionCode(models.Model):
+    _name = 'Division.Code'
     _description = 'Division Code'
 
     name = fields.Char('Division' , required = True)
