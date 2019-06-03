@@ -30,6 +30,10 @@
                 </xpath>
             </field>
         </record>
+        
+        
+        <!--
+        
         <record id="flixa_config_settings_action" model="ir.actions.act_window">
             <field name="name">Settings</field>
             <field name="type">ir.actions.act_window</field>
@@ -39,6 +43,20 @@
             <field name="target">inline</field>
             <field name="context">{'module' : 'flixa_fashion'}</field>
         </record>
+
+-->
+
+        <record id="flixa_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        
+        
+        
+
+
         <menuitem name="Settings" id="flixa_fashion_setting_menu" parent="flixa_base_menu" action="flixa_config_settings_action" sequence="50" />
     </data>
 </odoo>

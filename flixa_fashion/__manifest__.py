@@ -7,7 +7,7 @@
 
     'description': """
         The only system you will need to run your Fashion related business. Whether you are in Apprell, Accessories,
-        Footware, FlixaFashion got you covered. Includes the following:
+        Footware, or anythung in between, FlixaFashion got you covered. Includes the following modules:
         
         - E-Commerce
         - Sales and Marketting business flow.
