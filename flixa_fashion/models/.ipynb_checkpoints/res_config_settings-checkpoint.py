@@ -2,7 +2,8 @@
 
 from odoo import models, fields, api
 from odoo.exceptions import Warning
-  class
+
+class
 ResConfigSettings (models.TransientModel):
      _inherit = 'res.config.settings'
   module_use_season_codes = fields.Boolean ("Use Season Codes", default = False,
