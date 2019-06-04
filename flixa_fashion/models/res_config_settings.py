@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 
-from odoo import models, fields, api, _from odoo.exceptions import Warning
+from odoo import models, fields, api
+from odoo.exceptions import Warning
   class
 ResConfigSettings (models.TransientModel):
      _inherit = 'res.config.settings'
