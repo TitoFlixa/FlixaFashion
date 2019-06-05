@@ -21,3 +21,4 @@ class ResConfigSettings (models.TransientModel):
     module_mandatory_designer_code = fields.Boolean ("Mandatory on Product Form", default = False, help = "Force the user to select a designer code when adding a new product")
     module_use_collection_codes = fields.Boolean ("Use Collection Codes", default = False, help = "Associate your products with a specific collection code.")
     module_mandatory_collection_code = fields.Boolean ("Mandatory on Product Form", default = False, help = "Force the user to select a collection code when adding a new product")
+    
