@@ -62,6 +62,7 @@
                 </div>
             </div>
         </xpath>
+        </field>
     </record>
     <record id="flixa_config_settings_action" model="ir.actions.act_window">
         <field name="name">Settings</field>
