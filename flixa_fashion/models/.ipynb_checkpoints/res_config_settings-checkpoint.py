@@ -13,7 +13,8 @@ class ResConfigSettings (models.TransientModel):
     _inherit = 'res.config.settings'
     module_use_season_codes = fields.Boolean ("Use Season Codes", default = False, help = "Associate your products with a specific season such as (Spring Collection, Summer Collection, etc.)")
     module_mandatory_season_code = fields.Boolean ("Season Mandatory on Product Form", default = False, help = "Force the user to select a season code when adding a new product")
-    module__use_division_codes = fields.Boolean ("Use Division Codes", default = False, help = "Associate your products with a specific division code such as (Menswear, Women ware, Children, etc.)")
+    
+    module_use_division_codes = fields.Boolean ("Use Division Codes", default = False, help = "Associate your products with a specific division code such as (Menswear, Women ware, Children, etc.)")
     module_mandatory_division_code = fields.Boolean ("Division Mandatory on Product Form", default = False, help = "Force the user to select a division code when adding a new product")
     module_use_classification_codes = fields.Boolean ("Use Classification Codes", default = False, help = "Associate your products with a specific Classification code such as (Pants, T Shirts, Accessories, etc.)")
     module_mandatory_classification_code = fields.Boolean ("Classification Mandatory on Product Form", default = False, help = "Force the user to select a classification code when adding a new product")
