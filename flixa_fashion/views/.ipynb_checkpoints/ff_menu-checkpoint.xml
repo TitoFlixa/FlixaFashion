@@ -48,7 +48,17 @@
       <field name="res_model">ff.season.code</field>
       <field name="view_mode">tree,form</field>
     </record>
+
+      
+          <!-- actions opening scale_code views on models -->
+
+    <record id="ff_scale_code_action_window" model="ir.actions.act_window">
+      <field name="name">Scale Codes</field>
+      <field name="res_model">ff.scale.code</field>
+      <field name="view_mode">tree,form</field>
+    </record>
             
+
 
     <!-- Top menu items TEMPORARY -->      
       
@@ -65,6 +75,7 @@
 
          <menuitem name="Season Codes" id="ff_season_code_menu" parent="flixa_setting_menu" action="ff_season_code_action_window"/>
       
+         <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="flixa_setting_menu" action="ff_scale_code_action_window"/>
       
       
     </data>

@@ -14,10 +14,9 @@
                             <div class="col-12 col-lg-6 o_setting_box">
                                 <div class="o_setting_left_pane" />
                                 <div class="o_setting_right_pane">
-                                    <h3> Size Matrix Definition </h3>
-                                    <div>Defigne different size scales for your products.</div>
-                                                                                <button name="flixa_fashion.ff_division_code_action_window" type="action" string="Division Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-
+                                    <span class="o_form_label"> Size Matrix Definition </span>
+                                    <div class="text-muted">Defigne different size scales for your products.</div>
+                                    <button name="flixa_fashion.ff_scale_code_action_window" type="action" string="Size Scales" icon="fa-arrow-right" class="oe_link oe_inline" />
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 o_setting_box">
@@ -97,8 +96,8 @@
                                 </div>
                                     <div class="content-group" attrs="{'invisible': [('module_use_designer_codes', '=', False)]}">
                                         <div class="mt16">
-                                            <field name="module_mandatory_designer_code" class="oe_inline" string="Mandatory on Product form?" />
-                                            <label for="module_mandatory_designer_code" class="o_light_label" />
+                                            <field name="module_mandatory_designer_code" class="oe_inline" />
+                                            <label for="module_mandatory_designer_code" class="o_light_label" string="Mandatory on Product form?" />
                                             <button name="flixa_fashion.ff_designer_code_action_window" type="action" string="Designer Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
                                         </div>
                                     </div>
@@ -117,7 +116,7 @@
                                     Associate your products with a specific Collection code.  
                                 </div>
                                     <div class="content-group" attrs="{'invisible': [('module_use_collection_codes', '=', False)]}">
-                                        <div class="row mt16">
+                                        <div class="mt16">
                                             <field name="module_mandatory_collection_code" class="oe_inline" />
                                             <label for="module_mandatory_collection_code" class="o_light_label" string="Mandatory on Product form?" />
                                             <button name="flixa_fashion.ff_collection_code_action_window" type="action" string="Collection Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
