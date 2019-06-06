@@ -67,6 +67,10 @@
       
     <menuitem name="Division Codes" id="ff_division_code_menu" parent="flixa_setting_menu" action="ff_division_code_action_window"/>
 
+    <menuitem name="Division Codes" id="ff_division_code_menu" parent="inventory_configuration_products" action="ff_division_code_action_window"/>
+      
+      
+      
          <menuitem name="Designer Codes" id="ff_designer_code_menu" parent="flixa_setting_menu" action="ff_designer_code_action_window"/>
 
          <menuitem name="Collection Codes" id="ff_collection_code_menu" parent="flixa_setting_menu" action="ff_collection_code_action_window"/>
