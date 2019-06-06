@@ -23,3 +23,39 @@ class ResConfigSettings (models.TransientModel):
     module_use_collection_codes = fields.Boolean ("Use Collection Codes", default = False, help = "Associate your products with a specific collection code.")
     module_mandatory_collection_code = fields.Boolean ("Collecion Code Mandatory on Product Form", default = False, help = "Force the user to select a collection code when adding a new product")
     
+    
+    
+    def get_values(self):
+        ir_config = self.env['ir.config_parameter']
+        flixa_fashion_res = super(ResConfigSettings, self).get_values()
+        flixa_fashion_res.update(
+            module_use_season_codes=True if ir_config.sudo().get_param('module_use_season_codes') == "True" else False,
+            module_mandatory_season_code=True if ir_config.sudo().get_param('module_mandatory_season_code') == "True" else False,            
+            module_use_division_codes=True if ir_config.sudo().get_param('module_use_division_codes') == "True" else False,
+            module_mandatory_division_code=True if ir_config.sudo().get_param('module_mandatory_division_code') == "True" else False,
+            module_use_classification_codes=True if ir_config.sudo().get_param('module_use_classification_codes') == "True" else False,
+            module_mandatory_classification_code=True if ir_config.sudo().get_param('module_mandatory_classification_code') == "True" else False,
+            module_use_designer_codes=True if ir_config.sudo().get_param('module_use_designer_codes') == "True" else False,
+            module_mandatory_designer_code=True if ir_config.sudo().get_param('module_mandatory_designer_code') == "True" else False,            
+            module_use_collection_codes=True if ir_config.sudo().get_param('module_use_collection_codes') == "True" else False,
+            module_mandatory_collection_code=True if ir_config.sudo().get_param('module_mandatory_collection_code') == "True" else False,
+            
+
+        )
+        return flixa_fashion_res
+
+    def set_values(self):
+        ir_config = self.env['ir.config_parameter']
+        super(ResConfigSettings, self).set_values()
+        ir_config.set_param('module_use_season_codes', self.module_use_season_codes)
+        ir_config.set_param('module_mandatory_season_code', self.module_mandatory_season_code)
+        ir_config.set_param('module_use_division_codes', self.module_use_division_codes)
+        ir_config.set_param('module_mandatory_division_code', self.module_mandatory_division_code)                
+        ir_config.set_param('module_use_classification_codes', self.module_use_classification_codes)
+        ir_config.set_param('module_mandatory_classification_codes', self.module_mandatory_classification_code)                
+        ir_config.set_param('module_use_designer_codes', self.module_use_designer_codes)
+        ir_config.set_param('module_mandatory_designer_code', self.module_mandatory_designer_code)        
+        ir_config.set_param('module_use_collection_codes', self.module_use_collection_codes)
+        ir_config.set_param('module_mandatory_collection_code', self.module_mandatory_collection_code)
+
+    
