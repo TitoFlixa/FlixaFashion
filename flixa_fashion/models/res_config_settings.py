@@ -30,7 +30,7 @@ class ResConfigSettings (models.TransientModel):
         flixa_fashion_res = super(ResConfigSettings, self).get_values()
         flixa_fashion_res.update(
             module_use_season_codes=True if ir_config.sudo().get_param('module_use_season_codes') == "True" else False,
-            module_mandatory_season_code=True if ir_config.sudo().get_param('module_use_season_codes') == "True" and ir_config.sudo().get_param('module_mandatory_season_code') == "True" else False,            
+            module_mandatory_season_code=True ir_config.sudo().get_param('module_mandatory_season_code') == "True" else False,            
             module_use_division_codes=True if ir_config.sudo().get_param('module_use_division_codes') == "True" else False,
             module_mandatory_division_code=True if ir_config.sudo().get_param('module_mandatory_division_code') == "True" else False,
             module_use_classification_codes=True if ir_config.sudo().get_param('module_use_classification_codes') == "True" else False,
