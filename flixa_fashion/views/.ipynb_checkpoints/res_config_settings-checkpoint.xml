@@ -140,5 +140,9 @@
         <field name="target">inline</field>
         <field name="context">{'module' : 'flixa_fashion'}</field>
     </record>
+
+    <!--
     <menuitem name="Settings" id="flixa_fashion_setting_menu" parent="flixa_base_menu" action="flixa_config_settings_action" sequence="50" />
+
+-->
 </odoo>
