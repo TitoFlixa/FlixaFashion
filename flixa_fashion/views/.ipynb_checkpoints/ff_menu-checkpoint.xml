@@ -60,7 +60,7 @@
             
 
 
-    <!-- Top menu items TEMPORARY      
+    <!-- Top menu items TEMPORARY -->     
       
     <menuitem name="FlixaFashion" id="flixa_base_menu" />
     <menuitem name="Settings Menu" id="flixa_setting_menu" parent="flixa_base_menu"/>
@@ -77,7 +77,9 @@
       
          <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="flixa_setting_menu" action="ff_scale_code_action_window"/>
 
--->
+
+      
+      <!--
       
           <menuitem id="ff_submenu_in_config_stock" name="Matrix and BI Setup" parent="stock.menu_stock_config_settings" sequence="99"/>
       
@@ -93,7 +95,7 @@
       
          <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="ff_submenu_in_config_stock" action="ff_scale_code_action_window"/>
 
-      
+      -->
       
     </data>
 </odoo>
