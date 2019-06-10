@@ -78,7 +78,7 @@
          <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="flixa_setting_menu" action="ff_scale_code_action_window"/>
 
 --> 
-      
+ <!--     
       
       
           <menuitem id="ff_submenu_in_config_stock" name="Matrix and BI Setup" parent="stock.menu_stock_config_settings" sequence="95"/>
@@ -95,10 +95,10 @@
       
          <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="ff_submenu_in_config_stock" action="ff_scale_code_action_window"/>
 
+  -->    
       
       
-      
-  <!-- Analytics Menu
+  <!-- Analytics Menu -->
       
       
                 <menuitem id="ff_submenu_in_ana_stock" name="Matrix and BI Setup 2" parent="stock.menu_stock_config_settings" sequence="99"/>
@@ -130,7 +130,7 @@
             groups="analytic.group_analytic_accounting"/>
 
       
-      -->
+      
       
       
       
