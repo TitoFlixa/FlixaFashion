@@ -81,7 +81,7 @@
       
       
       
-          <menuitem id="ff_submenu_in_config_stock" name="Matrix and BI Setup" parent="stock.menu_stock_config_settings" sequence="99"/>
+          <menuitem id="ff_submenu_in_config_stock" name="Matrix and BI Setup" parent="stock.menu_stock_config_settings" sequence="95"/>
       
     <menuitem name="Division Codes" id="ff_division_code_menu" parent="ff_submenu_in_config_stock" action="ff_division_code_action_window"/>      
             
@@ -95,6 +95,44 @@
       
          <menuitem name="Scale Codes" id="ff_scale_code_menu" parent="ff_submenu_in_config_stock" action="ff_scale_code_action_window"/>
 
+      
+      
+      
+<! --- Analytics Menu-->
+      
+      
+                <menuitem id="ff_submenu_in_ana_stock" name="Matrix and BI Setup 2" parent="stock.menu_stock_config_settings" sequence="99"/>
+
+      
+      
+              <menuitem
+            name="Analytic Items"
+            parent="ff_submenu_in_ana_stock"
+            action="analytic.account_analytic_line_action_entries"
+            id="menu_action_analytic_lines_tree"
+            sequence="35"/>
+
+        <menuitem action="analytic.action_account_analytic_account_form" id="account_analytic_def_account"
+            parent="ff_submenu_in_ana_stock"
+            sequence="0"/>
+
+        <menuitem
+            id="account_analytic_tag_menu"
+            name="Analytic Tags"
+            parent="ff_submenu_in_ana_stock"
+            action="analytic.account_analytic_tag_action"/>
+
+        <menuitem
+            id="account_analytic_group_menu"
+            name="Analytic Account Groups"
+            parent="ff_submenu_in_ana_stock"
+            action="analytic.account_analytic_group_action"
+            groups="analytic.group_analytic_accounting"/>
+
+      
+      
+      
+      
       
     </data>
 </odoo>
