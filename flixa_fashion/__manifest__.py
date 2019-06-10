@@ -23,7 +23,7 @@
     'version': '12.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock', 'account', 'sale_management', 'analytic'],
+    'depends': ['base', 'sale_management', 'stock', 'account', 'analytic'],
 
     # always loaded
     'data': [
