@@ -29,100 +29,8 @@
                         <h2>Business Intelegence &amp; Analysis</h2>
                         <div class="row mt16 o_settings_container">
                             <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane">
-                                    <field name="module_use_season_codes" widget="upgrade_boolean"/>
-                                </div>
-                                <div class="o_setting_right_pane">
-                                    <label for="module_use_season_codes" />
-                                    <div class="text-muted" id="module_use_season_codes">
-                                    Assign a "season code" to your products for BI and reporting categorization. Examples, Spring 2018, Summer Collection, etc. 
-                                </div>
-                                    <div class="content-group" attrs="{'invisible': [('module_use_season_codes', '=', False)]}">
-                                        <div class="mt16">
-                                            <field name="module_mandatory_season_code" class="oe_inline" widget="upgrade_boolean"/>
-                                            <label for="module_mandatory_season_code" class="o_light_label" string="Mandatory on Product form?" />
-                                            <button name="flixa_fashion.ff_season_code_action_window" type="action" string="Season Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane">
-                                    <field name="module_use_division_codes" widget="upgrade_boolean"/>
-                                </div>
-                                <div class="o_setting_right_pane">
-                                    <label for="module_use_division_codes" />
-                                    <div class="text-muted" id="module_use_division_codes">
-                                    Assosiate your products with a Division code for BI and reporting categorization. Examples, Womens ware, Accessories, Mens ware, etc. 
-                                </div>
-                                    <div class="content-group" attrs="{'invisible': [('module_use_division_codes', '=', False)]}">
-                                        <div class="mt16">
-                                            <field name="module_mandatory_division_code" class="oe_inline" widget="upgrade_boolean"/>
-                                            <label for="module_mandatory_division_code" class="o_light_label" string="Mandatory on Product form?" />
-                                            <button name="flixa_fashion.ff_division_code_action_window" type="action" string="Division Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- -->
-                        <div class="row mt16 o_settings_container">
-                            <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane">
-                                    <field name="module_use_classification_codes" widget="upgrade_boolean"/>
-                                </div>
-                                <div class="o_setting_right_pane">
-                                    <label for="module_use_classification_codes" />
-                                    <div class="text-muted" id="module_use_classification_codes">
-                                    Associate your products with a specific Classification code such as (Pants, T Shirts, Accessories, etc.)
-                                </div>
-                                    <div class="content-group" attrs="{'invisible': [('module_use_classification_codes', '=', False)]}">
-                                        <div class="mt16">
-                                            <field name="module_mandatory_classification_code" class="oe_inline" widget="upgrade_boolean"/>
-                                            <label for="module_mandatory_classification_code" class="o_light_label" string="Mandatory on Product form?" />
-                                            <button name="flixa_fashion.ff_classification_code_action_window" type="action" string="Classification Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane">
-                                    <field name="module_use_designer_codes" widget="upgrade_boolean"/>
-                                </div>
-                                <div class="o_setting_right_pane">
-                                    <label for="module_use_designer_codes" />
-                                    <div class="text-muted" id="module_use_designer_codes">
-                                    Associate your products with a specific designer.  
-                                </div>
-                                    <div class="content-group" attrs="{'invisible': [('module_use_designer_codes', '=', False)]}">
-                                        <div class="mt16">
-                                            <field name="module_mandatory_designer_code" class="oe_inline" widget="upgrade_boolean"/>
-                                            <label for="module_mandatory_designer_code" class="o_light_label" string="Mandatory on Product form?" />
-                                            <button name="flixa_fashion.ff_designer_code_action_window" type="action" string="Designer Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- -->
-                        <div class="row mt16 o_settings_container">
-                            <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane">
-                                    <field name="module_use_collection_codes" widget="upgrade_boolean"/>
-                                </div>
-                                <div class="o_setting_right_pane">
-                                    <label for="module_use_collection_codes" />
-                                    <div class="text-muted" id="module_use_collection_codes">
-                                    Associate your products with a specific Collection code.  
-                                </div>
-                                    <div class="content-group" attrs="{'invisible': [('module_use_collection_codes', '=', False)]}">
-                                        <div class="mt16">
-                                            <field name="module_mandatory_collection_code" class="oe_inline" widget="upgrade_boolean"/>
-                                            <label for="module_mandatory_collection_code" class="o_light_label" string="Mandatory on Product form?" />
-                                            <button name="flixa_fashion.ff_collection_code_action_window" type="action" string="Collection Codes" icon="fa-arrow-right" class="oe_link oe_inline" style="margin-left: 20px;" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="o_setting_left_pane"></div>
+                                <div class="o_setting_right_pane"></div>
                             </div>
                         </div>
                         <!-- -->
@@ -140,9 +48,4 @@
         <field name="target">inline</field>
         <field name="context">{'module' : 'flixa_fashion'}</field>
     </record>
-
-    <!--
-    <menuitem name="Settings" id="flixa_fashion_setting_menu" parent="flixa_base_menu" action="flixa_config_settings_action" sequence="50" />
-
--->
 </odoo>
