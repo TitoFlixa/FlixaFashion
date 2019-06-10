@@ -98,7 +98,7 @@
       
       
       
-  <!-- Analytics Menu-->
+  <!-- Analytics Menu
       
       
                 <menuitem id="ff_submenu_in_ana_stock" name="Matrix and BI Setup 2" parent="stock.menu_stock_config_settings" sequence="99"/>
@@ -130,7 +130,7 @@
             groups="analytic.group_analytic_accounting"/>
 
       
-      
+      -->
       
       
       
