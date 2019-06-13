@@ -36,4 +36,3 @@ class ff_Scale_Code(models.Model):
 class ff_Size_Code(models.Model):
     _inherit = 'product.attribute.value'
     is_size = fields.Boolean(related='attribute_id.is_scale')
-    sequence_rel = fields.Integer(related='sequence')

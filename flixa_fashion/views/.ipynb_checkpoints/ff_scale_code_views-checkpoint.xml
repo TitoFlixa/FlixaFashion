@@ -108,7 +108,7 @@
         
         <!-- Scale Codes Sizes Action Filters is_size=True and sets defaults on Form view -->                
         <record id="ff_scale_code_sizes_action" model="ir.actions.act_window">
-            <field name="name">Scale Codes Sizes Action</field>
+            <field name="name">Scale Codes Sizesn</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">product.attribute.value</field>
             <field name="view_mode">tree</field>
