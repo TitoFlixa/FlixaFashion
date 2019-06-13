@@ -35,7 +35,7 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         # 'views/ff_menu.xml',
         # 'views/ff_scale_code_views.xml',        
         'views/res_config_settings.xml',
