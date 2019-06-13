@@ -32,7 +32,7 @@
 
     # any module necessary for this one to work correctly
     # 'depends': ['base', 'analytic', 'sale_stock', 'sale_management'],
-    'depends': ['base', 'stock', 'product'],
+    'depends': ['base', 'stock', 'wesite_sale','account', 'product'],
 
     
     # always loaded
