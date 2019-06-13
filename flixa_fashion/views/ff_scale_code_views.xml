@@ -116,7 +116,7 @@
             <field name="domain">[('is_size','=',True)]</field>
             <field name="context">{'default_is_size':True}</field>
             <field name="view_ids" eval="[(5, 0, 0),
-            (0, 0, {'view_mode': 'tree', 'view_id': ref('ff_scale_code_value_tree_view')})]"/>
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('ff_scale_code_sizes_tree_view')})]"/>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                     Define a new Scale Code Sizes
@@ -128,7 +128,7 @@
         <!-- Scale Codes Menuitem Stock/Configuration -->                        
         <menuitem id="ff_menu_action_scale_code_values"
                   name="Scale Code Sizes"
-                  action="ff_scale_code_value_action"
+                  action="ff_scale_code_sizes_action"
                   parent="stock.menu_product_in_config_stock"
                   sequence="7"
                   groups="stock.group_stock_manager"/>
