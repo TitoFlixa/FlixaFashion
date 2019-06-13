@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Scale Codes-->
-        <record id="scale_code_tree_view" model="ir.ui.view">
-            <field name="name">scale.code.tree.view</field>
+
+        <!-- Scale Codes Tree View -->
+        <record id="ff_scale_code_tree_view" model="ir.ui.view">
+            <field name="name">Scale Codes Tree View</field>
             <field name="model">product.attribute</field>
             <field name="arch" type="xml">
                 <tree string="Scale Code">
@@ -15,11 +16,12 @@
         </record>
 
         
-        <record id="scale_code_view_form" model="ir.ui.view">
-            <field name="name">scale.code.form.view</field>
+        <!-- Scale Codes Form View -->        
+        <record id="ff_scale_code_view_form" model="ir.ui.view">
+            <field name="name">Scale Code Form View</field>
             <field name="model">product.attribute</field>
             <field name="arch" type="xml">
-                <form string="Product Attribute">
+                <form string="Scale Code">
                     <sheet>
                     <group>
                         <group name="main_fields">
@@ -32,14 +34,12 @@
                         </group>
                     </group>
                     <group name="values_ids">
-                        <label for="value_ids" string="Scale Values"/>
+                        <label for="value_ids" string="Scale Sizes"/>
                         <field name="value_ids" widget="one2many_list" nolabel="1">
-                            <tree string="Values" editable="bottom">
-                                <field name="sequence" widget="handle"/>
-                                <field name="sequence_rel" readonly="1"/>
+                            <tree string="Sizes" editable="bottom">
+                                <field name="sequence_rel" widget="handle"/>
+                                <field name="sequence" readonly="1"/>
                                 <field name="name"/>
-                                <field name="is_custom" groups="product.group_product_variant" invisible="1"/>
-                                <field name="html_color" invisible="1"/>
                             </tree>
                         </field>
                     </group>
@@ -47,7 +47,10 @@
                 </form>
             </field>
         </record>
-        <record id="action_scale_code" model="ir.actions.act_window">
+        
+        
+        <!-- Scale Codes Action -- Filters is_scale=True and sets defaults on Form view -->        
+        <record id="ff_action_scale_code" model="ir.actions.act_window">
             <field name="name">Scale Codes</field>
             <field name="res_model">product.attribute</field>
             <field name="type">ir.actions.act_window</field>
@@ -59,35 +62,53 @@
                 'default_type':'select'}
             </field>
             <field name="view_ids" eval="[(5, 0, 0),
-            (0, 0, {'view_mode': 'tree', 'view_id': ref('scale_code_tree_view')}),
-            (0, 0, {'view_mode': 'form', 'view_id': ref('scale_code_view_form')})]"/>
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('ff_scale_code_tree_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('ff_scale_code_view_form')})]"/>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Define a new Scale Code
+                    Define a new Scale Codes
                 </p>
             </field>
         </record>
-        <menuitem id="menu_action_scale_code"
-                  name="Scale Code"
-                  action="action_scale_code"
+        
+        <!-- Scale Codes Menuitem - Stock/Configuration -->                
+        <menuitem id="ff_menu_action_scale_code"
+                  name="Scale Codes"
+                  action="ff_action_scale_code"
                   parent="stock.menu_product_in_config_stock"
                   sequence="6"
                   groups="stock.group_stock_manager"/>
+
+
+        
+        
         <!-- Scale Codes Attributes-->
-        <record id="scale_code_value_tree_view" model="ir.ui.view">
-            <field name="name">scale.code.variants.value.tree</field>
+        <!-- Scale Codes Attributes-->
+        <!-- Scale Codes Attributes-->
+        <!-- Scale Codes Attributes-->
+        <!-- Scale Codes Attributes-->
+        <!-- Scale Codes Attributes-->
+        <!-- Scale Codes Attributes-->
+        
+        <!-- Scale Codes Sizes Tree View -->
+        <record id="ff_scale_code_sizes_tree_view" model="ir.ui.view">
+            <field name="name">Scale Code Sizes Tree View</field>
             <field name="model">product.attribute.value</field>
             <field name="arch" type="xml">
-                <tree string="Scale Code Values" editable="top">
-                    <field name="sequence" widget="handle"/>
-                    <field name="sequence_rel" readonly="1"/>
+                <tree string="Scale Code Sizes" editable="bottom">
+                    <field name="sequence_rel" widget="handle"/>
+                    <field name="sequence" readonly="1"/>
                     <field name="attribute_id" readonly="1"/>
                     <field name="name"/>
                 </tree>
             </field>
         </record>
-        <record id="scale_code_value_action" model="ir.actions.act_window">
-            <field name="name">Size Scale Values</field>
+        
+        
+        
+        <!-- Scale Codes Sizes Action -- Filters is_size=True and sets defaults on Form view -->                
+        <record id="ff_scale_code_sizes_action" model="ir.actions.act_window">
+            <field name="name">Scale Codes Sizes Action</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">product.attribute.value</field>
             <field name="view_mode">tree</field>
@@ -95,16 +116,19 @@
             <field name="domain">[('is_size','=',True)]</field>
             <field name="context">{'default_is_size':True}</field>
             <field name="view_ids" eval="[(5, 0, 0),
-            (0, 0, {'view_mode': 'tree', 'view_id': ref('scale_code_value_tree_view')})]"/>
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('ff_scale_code_value_tree_view')})]"/>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Define a new Scale Code Value
+                    Define a new Scale Code Sizes
                 </p>
             </field>
         </record>
-        <menuitem id="menu_action_scale_code_values"
-                  name="Scale Code Values"
-                  action="scale_code_value_action"
+        
+        
+        <!-- Scale Codes Menuitem - Stock/Configuration -->                        
+        <menuitem id="ff_menu_action_scale_code_values"
+                  name="Scale Code Sizes"
+                  action="ff_scale_code_value_action"
                   parent="stock.menu_product_in_config_stock"
                   sequence="7"
                   groups="stock.group_stock_manager"/>
