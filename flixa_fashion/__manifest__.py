@@ -31,8 +31,8 @@
     'version': '12.0.1',
 
     # any module necessary for this one to work correctly
-    # 'depends': ['base', 'analytic', 'sale_stock', 'sale_management'],
-    'depends': ['base', 'account', 'stock'],
+    'depends': ['base', 'analytic', 'sale_stock', 'sale_management'],
+    # 'depends': ['base', 'account', 'stock'],
 
     
     # always loaded
