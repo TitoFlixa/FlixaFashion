@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+#################################################################################
+# Author      : Flixa Logic Inc. All Rights Reserved.
+# App         : Flixa Fashion.
+# Desc        : Flixa_Fashion Manifest.
+# Comments    : Base Eddition - Includes Sales, Inoicing, Inventory, Analytics
+#################################################################################
+
+
 {
     'name': "FlixaFashion",
 
@@ -28,8 +36,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/ff_menu.xml',
-        'views/ff_scale_code_views.xml',        
+        # 'views/ff_menu.xml',
+        # 'views/ff_scale_code_views.xml',        
         'views/res_config_settings.xml',
         
         # 'views/templates.xml',
