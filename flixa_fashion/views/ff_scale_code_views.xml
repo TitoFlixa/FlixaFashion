@@ -1,32 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- explicit list view definition -->
-        <record id="ff_scale_code_view_list" model="ir.ui.view">
-            <field name="name">Scale Codes</field>
-            <field name="model">ff.scale.code</field>
+        <!-- Scale Codes-->
+        <record id="scale_code_tree_view" model="ir.ui.view">
+            <field name="name">scale.code.tree.view</field>
+            <field name="model">product.attribute</field>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="name" />
+                <tree string="Scale Code">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name" string="Scale Name" />
                 </tree>
             </field>
         </record>
-        <!-- explicit form view definition -->
-        <record id="ff_scale_code_view_form" model="ir.ui.view">
-            <field name="name">Scale Code</field>
-            <field name="model">ff.scale.code</field>
+        <record id="scale_code_view_form" model="ir.ui.view">
+            <field name="name">scale.code.form.view</field>
+            <field name="model">product.attribute</field>
             <field name="arch" type="xml">
-                <form string="Scale Code">
-                    <sheet>
-                        <div class="oe_title">
-                            <label for="name" class="oe_edit_only" />
-                            <h1>
-                                <field name="name" placeholder="Scale Code" required="True" />
-                            </h1>
-                        </div>
-                    </sheet>
+                <form string="Product Attribute">
+                    <group>
+                        <group name="main_fields">
+                            <field name="is_scale" invisible="1"/>
+                            <label for="name" string="Scale Name" />
+                            <field name="name" nolabel="1" placeholder="Scale..."/>
+                            <field name="create_variant" widget="radio" invisible="1"/>
+                            <field name="type" widget="radio"  invisible="1"/>
+                        </group>
+                    </group>
+                    <group name="values_ids">
+                        <label for="value_ids" string="Scale Values"/>
+                        <field name="value_ids" widget="one2many_list" nolabel="1">
+                            <tree string="Values" editable="top">
+                                <field name="sequence" widget="handle"/>
+                                <field name="sequence_rel" readonly="0"/>
+                                <field name="name"/>
+                                <field name="is_custom" groups="product.group_product_variant" invisible="1"/>
+                                <field name="html_color" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
                 </form>
             </field>
         </record>
+        <record id="action_scale_code" model="ir.actions.act_window">
+            <field name="name">Scale Codes</field>
+            <field name="res_model">product.attribute</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_scale','=',True)]</field>
+            <field name="context">{'default_is_scale':True,
+                'default_create_variant':'always',
+                'default_type':'select'}
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('scale_code_tree_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('scale_code_view_form')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Define a new Scale Code
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_action_scale_code"
+                  name="Scale Code"
+                  action="action_scale_code"
+                  parent="stock.menu_product_in_config_stock"
+                  sequence="6"
+                  groups="stock.group_stock_manager"/>
+        <!-- Scale Codes Attributes-->
+        <record id="scale_code_value_tree_view" model="ir.ui.view">
+            <field name="name">scale.code.variants.value.tree</field>
+            <field name="model">product.attribute.value</field>
+            <field name="arch" type="xml">
+                <tree string="Scale Code Values" editable="top">
+                    <field name="sequence" widget="handle"/>
+                    <field name="sequence_rel"/>
+                    <field name="attribute_id" readonly="1"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="scale_code_value_action" model="ir.actions.act_window">
+            <field name="name">Size Scale Values</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.attribute.value</field>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('is_scale','=',True)]</field>
+            <field name="context">{'default_is_scale':True}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('scale_code_value_tree_view')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Define a new Scale Code Value
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_action_scale_code_values"
+                  name="Scale Code Values"
+                  action="scale_code_value_action"
+                  parent="stock.menu_product_in_config_stock"
+                  sequence="7"
+                  groups="stock.group_stock_manager"/>
+
     </data>
 </odoo>
