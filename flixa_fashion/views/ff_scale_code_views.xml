@@ -37,8 +37,7 @@
                         <label for="value_ids" string="Scale Sizes"/>
                         <field name="value_ids" widget="one2many_list" nolabel="1">
                             <tree string="Sizes" editable="bottom">
-                                <field name="sequence_rel" widget="handle"/>
-                                <field name="sequence" readonly="1"/>
+                                <field name="sequence" widget="handle"/>
                                 <field name="name"/>
                             </tree>
                         </field>
@@ -96,8 +95,7 @@
             <field name="model">product.attribute.value</field>
             <field name="arch" type="xml">
                 <tree string="Scale Code Sizes" editable="bottom">
-                    <field name="sequence_rel" widget="handle"/>
-                    <field name="sequence" readonly="1"/>
+                    <field name="sequence" widget="handle"/>
                     <field name="attribute_id" readonly="1"/>
                     <field name="name"/>
                 </tree>
