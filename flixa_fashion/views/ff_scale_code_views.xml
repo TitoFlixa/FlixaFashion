@@ -49,7 +49,7 @@
         </record>
         
         
-        <!-- Scale Codes Action -- Filters is_scale=True and sets defaults on Form view -->        
+        <!-- Scale Codes Action Filters is_scale=True and sets defaults on Form view -->        
         <record id="ff_action_scale_code" model="ir.actions.act_window">
             <field name="name">Scale Codes</field>
             <field name="res_model">product.attribute</field>
@@ -71,7 +71,7 @@
             </field>
         </record>
         
-        <!-- Scale Codes Menuitem - Stock/Configuration -->                
+        <!-- Scale Codes Menuitem Stock/Configuration -->                
         <menuitem id="ff_menu_action_scale_code"
                   name="Scale Codes"
                   action="ff_action_scale_code"
@@ -106,7 +106,7 @@
         
         
         
-        <!-- Scale Codes Sizes Action -- Filters is_size=True and sets defaults on Form view -->                
+        <!-- Scale Codes Sizes Action Filters is_size=True and sets defaults on Form view -->                
         <record id="ff_scale_code_sizes_action" model="ir.actions.act_window">
             <field name="name">Scale Codes Sizes Action</field>
             <field name="type">ir.actions.act_window</field>
@@ -125,7 +125,7 @@
         </record>
         
         
-        <!-- Scale Codes Menuitem - Stock/Configuration -->                        
+        <!-- Scale Codes Menuitem Stock/Configuration -->                        
         <menuitem id="ff_menu_action_scale_code_values"
                   name="Scale Code Sizes"
                   action="ff_scale_code_value_action"
