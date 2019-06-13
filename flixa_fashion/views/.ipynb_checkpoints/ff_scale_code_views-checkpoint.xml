@@ -12,6 +12,8 @@
                 </tree>
             </field>
         </record>
+
+        
         <record id="scale_code_view_form" model="ir.ui.view">
             <field name="name">scale.code.form.view</field>
             <field name="model">product.attribute</field>
@@ -86,8 +88,8 @@
             <field name="res_model">product.attribute.value</field>
             <field name="view_mode">tree</field>
             <field name="view_type">form</field>
-            <field name="domain">[('is_scale','=',True)]</field>
-            <field name="context">{'default_is_scale':True}</field>
+            <field name="domain">[('is_size','=',True)]</field>
+            <field name="context">{'default_is_size':True}</field>
             <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('scale_code_value_tree_view')})]"/>
             <field name="help" type="html">
