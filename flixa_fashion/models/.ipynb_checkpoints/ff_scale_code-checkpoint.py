@@ -18,6 +18,7 @@ from odoo import models, fields, api
 class ff_Scale_Code(models.Model): 
 	
     _inherit = 'product.attribute'
+    desc = fields.Char('Description', required=False)
     is_scale = fields.Boolean(string="Is Scale", help="Flag to show only records of scale codes")
     
     @api.model

@@ -9,6 +9,7 @@
                 <tree string="Scale Code">
                     <field name="sequence" widget="handle"/>
                     <field name="name" string="Scale Name" />
+                    <field name="desc" string="Description"/>
                 </tree>
             </field>
         </record>
@@ -19,11 +20,13 @@
             <field name="model">product.attribute</field>
             <field name="arch" type="xml">
                 <form string="Product Attribute">
+                    <sheet>
                     <group>
                         <group name="main_fields">
                             <field name="is_scale" invisible="1"/>
                             <label for="name" string="Scale Name" />
                             <field name="name" nolabel="1" placeholder="Scale..."/>
+                            <field name="desc" string="Description"/>
                             <field name="create_variant" widget="radio" invisible="1"/>
                             <field name="type" widget="radio"  invisible="1"/>
                         </group>
@@ -31,15 +34,16 @@
                     <group name="values_ids">
                         <label for="value_ids" string="Scale Values"/>
                         <field name="value_ids" widget="one2many_list" nolabel="1">
-                            <tree string="Values" editable="top">
+                            <tree string="Values" editable="bottom">
                                 <field name="sequence" widget="handle"/>
-                                <field name="sequence_rel" readonly="0"/>
+                                <field name="sequence_rel" readonly="1"/>
                                 <field name="name"/>
                                 <field name="is_custom" groups="product.group_product_variant" invisible="1"/>
                                 <field name="html_color" invisible="1"/>
                             </tree>
                         </field>
                     </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -76,7 +80,7 @@
             <field name="arch" type="xml">
                 <tree string="Scale Code Values" editable="top">
                     <field name="sequence" widget="handle"/>
-                    <field name="sequence_rel"/>
+                    <field name="sequence_rel" readonly="1"/>
                     <field name="attribute_id" readonly="1"/>
                     <field name="name"/>
                 </tree>
