@@ -20,9 +20,9 @@ class ff_ProductTemplateInherit(models.Model):
     _inherit = 'product.template'
 	
 	# used to show size scale field
-	is_size_scale = fields.Boolean(string="Size Scale?")
-	size_scale_id = fields.Many2one(comodel_name='product.attribute', string="Size Scale"
-	                                , domain=[('is_scale', '=', True)])
+    is_size_scale = fields.Boolean(string="Size Scale?")
+    size_scale_id = fields.Many2one(comodel_name='product.attribute', string="Size Scale"
+                                    , domain=[('is_scale', '=', True)])
 
     
     # Related Filed of attributes values as sizes
