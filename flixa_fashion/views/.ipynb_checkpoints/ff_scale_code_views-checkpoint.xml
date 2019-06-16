@@ -83,11 +83,7 @@
         
         <!-- Scale Codes Attributes-->
         <!-- Scale Codes Attributes-->
-        <!-- Scale Codes Attributes-->
-        <!-- Scale Codes Attributes-->
-        <!-- Scale Codes Attributes-->
-        <!-- Scale Codes Attributes-->
-        <!-- Scale Codes Attributes-->
+
         
         <!-- Scale Codes Sizes Tree View -->
         <record id="ff_scale_code_sizes_tree_view" model="ir.ui.view">

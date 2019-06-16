@@ -26,10 +26,10 @@ class ff_ProductTemplateInherit(models.Model):
 
     
     # Related Filed of attributes values as sizes
-	value_ids = fields.One2many(related='size_scale_id.value_ids')
-
     
-	@api.onchange('size_scale_id')
+    value_ids = fields.One2many(related='size_scale_id.value_ids')
+	
+    @api.onchange('size_scale_id')
 	@api.multi
 	def generate_attribute_lines(self):
 		"""
