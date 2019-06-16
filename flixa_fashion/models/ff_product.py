@@ -31,7 +31,7 @@ class ff_ProductTemplateInherit(models.Model):
     def generate_attribute_lines(self):
     
     """
-    On Select Size Scale load it on attribute line with all it's scale code sizes  
+        On Select Size Scale load it on attribute line with all it's scale code sizes  
     """
     
         for product_id in self:
