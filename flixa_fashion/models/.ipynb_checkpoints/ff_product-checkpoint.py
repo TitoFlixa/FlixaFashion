@@ -29,11 +29,7 @@ class ff_ProductTemplateInherit(models.Model):
     @api.onchange('size_scale_id')
     @api.multi
     def generate_attribute_lines(self):
-    
-    """
-        On Select Size Scale load it on attribute line with all it's scale code sizes  
-    """
-    
+        
         for product_id in self:
             vals = []
             for line in product_id.attribute_line_ids.filtered(lambda x: not x.is_size_scale_line):
@@ -54,15 +50,6 @@ class ff_ProductTemplateInherit(models.Model):
     @api.multi
     def write(self, vals_list):
         
-        """
-            - On write  attribute delete old attribute line if exist.
-            - Reflect it in product.template.attribute.line create new record.
-            - Then complete default cycle.
-            :param vals_list:
-            :return: SUPER
-        """
-    
-
         for product_id in self:
             old_size_scale_id = product_id.size_scale_id
             print ("old_size_scale_id: ",old_size_scale_id)
