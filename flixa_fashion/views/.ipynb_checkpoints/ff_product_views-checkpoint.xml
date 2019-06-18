@@ -36,7 +36,7 @@
                         <p class="oe_grey">
                             <strong>Warning</strong>: adding or deleting attributes
                             will delete and recreate existing variants and lead
-                            to the loss of their possible customizations.
+                            to the loss of their possible customizations...
                         </p>
                     </page>
 
