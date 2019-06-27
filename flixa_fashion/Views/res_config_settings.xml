@@ -16,7 +16,7 @@
                                 <div class="o_setting_right_pane">
                                     <span class="o_form_label"> Size Matrix Definition </span>
                                     <div class="text-muted">Defigne different size scales for your products.</div>
-                                    <button name="flixa_fashion.ff_scale_code_action_window" type="action" string="Size Scales" icon="fa-arrow-right" class="oe_link oe_inline" />
+                                    <button name="flixa_fashion.ff_action_scale_code" type="action" string="Size Scales" icon="fa-arrow-right" class="oe_link oe_inline" />
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 o_setting_box">
@@ -29,8 +29,8 @@
                         <h2>Business Intelegence &amp; Analysis</h2>
                         <div class="row mt16 o_settings_container">
                             <div class="col-12 col-lg-6 o_setting_box">
-                                <div class="o_setting_left_pane"></div>
-                                <div class="o_setting_right_pane"></div>
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane"/>
                             </div>
                         </div>
                         <!-- -->

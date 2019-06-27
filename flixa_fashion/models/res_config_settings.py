@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+#################################################################################
+# Author      : Flixa Logic Inc. All Rights Reserved.
+# App         : Flixa Fashion.
+# Desc        : Flixa_Fashion Configuration View res.config.settings 
+# Comments    :
+#################################################################################
 
 # 1 : imports of python lib
 

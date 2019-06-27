@@ -5,7 +5,9 @@
 # Desc        : Flixa_Fashion Size Scale Classes and Methods.
 # Comments    :
 #################################################################################
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import Warning
+
 
 # Inherit Product.Template Class
 class ff_ProductTemplateInherit(models.Model):
@@ -22,60 +24,98 @@ class ff_ProductTemplateInherit(models.Model):
 	
 	# used to show size scale field
 	is_size_scale = fields.Boolean(string="Size Scale?")
+	edit_size_scale = fields.Boolean(string="Size Scale Editable?",default=True)
 	size_scale_id = fields.Many2one(comodel_name='product.attribute', string="Size Scale"
 	                                , domain=[('is_scale', '=', True)])
 	# Related Filed of attributes values as sizes
 	value_ids = fields.One2many(related='size_scale_id.value_ids')
+	# The line that is marked as size scale
+	line_id = fields.Many2one('product.template.attribute.line')
 	
-	@api.onchange('size_scale_id')
-	@api.multi
-	def generate_attribute_lines(self):
+	@api.model
+	def create(self, vals_list):
 		"""
-		On Select Size Scale load it on attribute line with all it's scale code sizes
-		"""
-		for product_id in self:
-			vals = []
-			for line in product_id.attribute_line_ids.filtered(lambda x: not x.is_size_scale_line):
-				vals.append({
-					'attribute_id': line.attribute_id.id,
-					'value_ids': [(6, 0, line.value_ids.ids)],
-					})
-			
-			if product_id.size_scale_id:
-				vals.append({
-					'is_size_scale_line': True,
-					'attribute_id': product_id.size_scale_id.id,
-					'value_ids': [(6, 0, product_id.size_scale_id.value_ids.ids)],
-					})
-				product_id.update({'attribute_line_ids': vals})
-
-	@api.multi
-	def write(self, vals_list):
-		"""
-		- On write  attribute delete old attribute line if exist.
-		- Reflect it in product.template.attribute.line create new record.
+		- On create new attribute reflect it in product.template.attribute.line
 		- Then complete default cycle.
 		:param vals_list:
 		:return: SUPER
 		"""
-		for product_id in self:
-			old_size_scale_id = product_id.size_scale_id
-			print ("old_size_scale_id: ",old_size_scale_id)
-			attribute_line_obj = self.env['product.template.attribute.line']
-			# attribute_value_obj = self.env['product.attribute']
-			# attribute_line_ids = vals_list.get('attribute_line_ids') or []
-			print(vals_list.get('size_scale_id'))
-			if 'size_scale_id' in vals_list and not vals_list.get('size_scale_id'):
-				if old_size_scale_id:
-					old_rec = attribute_line_obj.search([('attribute_id', '=', old_size_scale_id.id)
-						                                    , ('product_tmpl_id', '=', product_id.id)])
-					print("rec: ",old_rec)
-					if old_rec:
-						old_rec.unlink()
-			super(ff_ProductTemplateInherit, product_id).write(vals_list)
+		attribute_value_obj = self.env['product.attribute']
+		attribute_line_ids = vals_list.get('attribute_line_ids') or []
+		if vals_list.get('size_scale_id') and vals_list.get('is_size_scale'):
+			size_scale_id = attribute_value_obj.browse(vals_list.get('size_scale_id'))
+			if size_scale_id:
+				attribute_line_ids.append((0, 0, {
+					'attribute_id': size_scale_id.id,
+					'is_size_scale_line': True,
+					'active': True,
+					'value_ids': [(6, 0, size_scale_id.value_ids.ids)],
+				}))
+				# MArk size_scale_field as non editable after creating
+				vals_list['edit_size_scale'] = False
+		if len(attribute_line_ids):
+			vals_list['attribute_line_ids'] = attribute_line_ids
+		product_id = super(ff_ProductTemplateInherit, self).create(vals_list)
+		line_id = (l[0] for l in product_id.get_line())
+		if line_id:
+			product_id.line_id = line_id
+		return product_id
 	
-		return True
-
+	@api.multi
+	def write(self, vals):
+		variant_obj = self.env['product.product']
+		for product_id in self:
+			super(ff_ProductTemplateInherit, self).write(vals)
+			if 'is_size_scale' in vals:
+				# Size scale marked as False -> deactivate product variants that contain this values
+				if not product_id.is_size_scale:
+					if product_id.line_id:
+						variant_ids = [v[0] for v in product_id.get_variants()]
+						if variant_ids:
+							variants = variant_obj.browse(variant_ids)
+							variants.write({'active': False})
+					else:
+						raise Warning(_("Something went wrong on delete related record of size scale!!!"))
+				# Size scale marked as True -> activate product variants that contain this values
+				else:
+					if product_id.line_id:
+						variant_ids = [v[0] for v in product_id.get_variants()]
+						if variant_ids:
+							variants = variant_obj.browse(variant_ids)
+							variants.write({'active': True})
+							
+	@api.model
+	def get_line(self):
+		"""
+		get variant lines that is deactivated
+		:return:
+		"""
+		query = """
+			SELECT id
+			FROM product_template_attribute_line
+			WHERE product_tmpl_id = %s
+				AND attribute_id = %s
+				AND active = False AND is_size_scale_line = True
+		""" % (self.id, self.size_scale_id.id)
+		self.env.cr.execute(query)
+		return self.env.cr.fetchall()
+	
+	@api.model
+	def get_variants(self):
+		"""
+		get all related variants that is created for specific product and attributes
+		:return:
+		"""
+		query = """
+			 SELECT id FROM product_product WHERE product_tmpl_id = %s
+			 AND id in (
+				SELECT product_product_id
+				FROM product_attribute_value_product_product_rel
+				WHERE product_attribute_value_id in %s)""" %\
+		        (self.id, tuple(self.size_scale_id.value_ids.ids))
+		self.env.cr.execute(query)
+		return self.env.cr.fetchall()
+		
 
 # Inherit product.template.attribute.line Class
 class ff_product_template_attribute_line(models.Model):
@@ -86,7 +126,25 @@ class ff_product_template_attribute_line(models.Model):
 	
 	@api.model
 	def create(self, vals_list):
+		"""
+		- On create change value of active records regarding to it's type
+		- [size scale is hide, other showen as default]
+		:param vals_list:
+		:return: SUPER action
+		"""
 		line = super(ff_product_template_attribute_line, self).create(vals_list)
 		if line.is_size_scale_line:
 			line.write({'active': False})
+		else:
+			line.write({'active': True})
 		return line
+	
+	
+class ff_ProductAttributeValue(models.Model):
+    _inherit = "product.attribute.value"
+
+    @api.multi
+    def name_get(self):
+        if not self._context.get('show_attribute', True):  # TDE FIXME: not used
+            return super(ff_ProductAttributeValue, self).name_get()
+        return [(value.id, " %s" % (value.name)) for value in self]

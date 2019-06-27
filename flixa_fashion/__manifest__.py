@@ -32,20 +32,17 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'analytic', 'sale_stock', 'sale_management'],
-    # 'depends': ['base', 'account', 'stock'],
 
-    
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/ff_product_views.xml',
         'views/ff_scale_code_views.xml',        
         'views/res_config_settings.xml',
-        
-        # 'views/templates.xml',
     ],
+    
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
 }

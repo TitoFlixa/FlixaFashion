@@ -14,12 +14,15 @@
                             <group>
                                 <field name="is_size_scale"/>
                                 <field name="size_scale_id"
-                                       attrs="{'invisible':[('is_size_scale','=',False)]}"/>
+                                       attrs="{'invisible':[('is_size_scale','=',False)],
+                                       'readonly':[('edit_size_scale','=',False)]}"/>
                             </group>
                             <group>
+                                <field name="edit_size_scale" invisible="1"/>
+                                <field name="line_id" invisible="1"/>
                                 <field name="value_ids"
                                        widget="many2many_tags"
-                                       attrs="{'invisible':[('size_scale_id','=',False)]}"/>
+                                       attrs="{'invisible':[('is_size_scale','=',False)]}"/>
                             </group>
                         </group>
                         <field name="attribute_line_ids" widget="one2many_list"
@@ -29,14 +32,14 @@
                                 <field name="value_ids" widget="many2many_tags"
                                        domain="[('attribute_id', '=', attribute_id)]"
                                        context="{'default_attribute_id': attribute_id}"/>
-                                <field name="is_size_scale_line" readonly="1" invisible="1"/>
-                                <field name="active" readonly="1" invisible="1"/>
+                                <field name="is_size_scale_line" invisible="1"/>
+                                <field name="active" invisible="1"/>
                             </tree>
                         </field>
                         <p class="oe_grey">
                             <strong>Warning</strong>: adding or deleting attributes
                             will delete and recreate existing variants and lead
-                            to the loss of their possible customizations...
+                            to the loss of their possible customizations.
                         </p>
                     </page>
 

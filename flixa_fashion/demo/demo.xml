@@ -1,94 +1,30 @@
 <odoo>
     <data>
-<!--
-        
-        <record id="object0" model="ff.division.code"> 
-            <field name="name">Div 0</field>
-        </record>
-        
-        <record id="object1" model="ff.division.code"> 
-            <field name="name">Div 1</field>
-        </record>
-        
-        <record id="object2" model="ff.division.code"> 
-            <field name="name">Div 2</field>
-        </record>
-        
-        <record id="object3" model="ff.division.code"> 
-            <field name="name">Div 3</field>
-        </record>
-        
-        <record id="object4" model="ff.division.code"> 
-            <field name="name">Div 4</field>
-        </record>
-        
-        
-        
-        <record id="object0" model="ff.designer.code"> 
-            <field name="name">DES 0</field>
-        </record>
-
-        <record id="object1" model="ff.designer.code"> 
-            <field name="name">DES 1</field>
-        </record>
-
-        <record id="object2" model="ff.designer.code"> 
-            <field name="name">DES 2</field>
-        </record>
-
-        <record id="object3" model="ff.designer.code"> 
-            <field name="name">DES 3</field>
-        </record>
-
-        <record id="object4" model="ff.designer.code"> 
-            <field name="name">DES 4</field>
-        </record>
-
-        
-
-        <record id="object0" model="ff.classification.code"> 
-            <field name="name">Class 0</field>
-        </record>
-        
-        <record id="object1" model="ff.classification.code"> 
-            <field name="name">Class 1</field>
-        </record>
-        
-        <record id="object2" model="ff.classification.code"> 
-            <field name="name">Class 2</field>
-        </record>
-        
-        <record id="object3" model="ff.classification.code"> 
-            <field name="name">Class 3</field>
-        </record>
-        
-        <record id="object4" model="ff.classification.code"> 
-            <field name="name">Class 4</field>
-        </record>
-        
-
-        <record id="object0" model="ff.collection.code"> 
-            <field name="name">Coll 0</field>
-        </record>
-        
-        <record id="object1" model="ff.collection.code"> 
-            <field name="name">Coll 1</field>
-        </record>
-        
-        <record id="object2" model="ff.collection.code"> 
-            <field name="name">Coll 2</field>
-        </record>
-        
-        <record id="object3" model="ff.collection.code"> 
-            <field name="name">Coll 3</field>
-        </record>
-        
-        <record id="object4" model="ff.collection.code"> 
-            <field name="name">Coll 4</field>
-        </record>
-        
-   -->             
-        
-        
+        <!--  -->
+        <!--   <record id="object0" model="flixa_fashion.flixa_fashion"> -->
+        <!--     <field name="name">Object 0</field> -->
+        <!--     <field name="value">0</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object1" model="flixa_fashion.flixa_fashion"> -->
+        <!--     <field name="name">Object 1</field> -->
+        <!--     <field name="value">10</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object2" model="flixa_fashion.flixa_fashion"> -->
+        <!--     <field name="name">Object 2</field> -->
+        <!--     <field name="value">20</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object3" model="flixa_fashion.flixa_fashion"> -->
+        <!--     <field name="name">Object 3</field> -->
+        <!--     <field name="value">30</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object4" model="flixa_fashion.flixa_fashion"> -->
+        <!--     <field name="name">Object 4</field> -->
+        <!--     <field name="value">40</field> -->
+        <!--   </record> -->
+        <!--  -->
     </data>
 </odoo>
